@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Turmas</ion-title>
+    <ion-buttons slot="start"> 
+      <ion-button routerLink="/painel" > 
+          <ion-icon name="chevron-back-outline"></ion-icon>          
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-icon name="qr-code-outline"></ion-icon>
+      <ion-input placeholder=" Digite o Código da turma" inputmode="text"></ion-input>
+    </ion-item>  
+
+    <ion-item>
+      <ion-icon name="bonfire-outline"></ion-icon>
+      <ion-input placeholder=" Nome do Lider" inputmode="semestre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail-outline"></ion-icon>
+      <ion-input placeholder=" Digite o Email" inputmode="mail"></ion-input>
+    </ion-item>
+
+
+    <ion-button color='primary' expand='block'>Enviar</ion-button> 
+    
+</form>
+</ion-content>

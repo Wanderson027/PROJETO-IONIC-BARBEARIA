@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-button routerLink="" > 
+          <ion-icon name="chevron-back-outline"></ion-icon>          
+      </ion-button>
+    </ion-buttons>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1 src="https://pbs.twimg.com/profile_images/468820564308537345/isvrwi7w.jpeg" ></h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
+    <ion-item>
+      <ion-icon slot="start" name="email" color='primary'></ion-icon>
+      <ion-input formControlName="email" placeholder="digite seu login" inputmode="mail"></ion-input>
+
+      <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')" >Obrigatório</ion-note>
+      <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">Email invalido</ion-note>
+    </ion-item>  
+
+    <ion-item>
+      <ion-icon slot="start" name="lock-open-outline" color='primary'></ion-icon>
+      <ion-input formControlName="senha" placeholder="digite a Senha"></ion-input>
+
+      <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')" >Obrigatório</ion-note>
+      <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')">Senha Invalida</ion-note>
+    </ion-item> 
+
+    <ion-button color='primary' expand='block'  type="submit" [disabled]="loginForm.invalid" >
+      Login
+    </ion-button>
+
+    <ion-button color='primary' expand='block' fill='clear'>Criar Conta</ion-button>
+    <ion-button color='primary' expand='block' >
+      <ion-icon name='logo-facebook'></ion-icon>
+      Login Facebook
+    </ion-button>
+</form>
+</ion-content>
