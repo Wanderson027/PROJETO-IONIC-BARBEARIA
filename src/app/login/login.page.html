@@ -28,14 +28,11 @@
       <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')">Senha Invalida</ion-note>
     </ion-item> 
 
-    <ion-button color='primary' expand='block'  type="submit" [disabled]="loginForm.invalid" >
+    <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="loginForm.invalid" >
       Login
     </ion-button>
 
-    <ion-button color='primary' expand='block' fill='clear'>Criar Conta</ion-button>
-    <ion-button color='primary' expand='block' >
-      <ion-icon name='logo-facebook'></ion-icon>
-      Login Facebook
-    </ion-button>
+    <ion-button color='primary' color="dark" expand='block' fill='clear'>Criar Conta</ion-button>
+  
 </form>
 </ion-content>
