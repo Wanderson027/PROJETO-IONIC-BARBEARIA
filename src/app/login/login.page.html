@@ -5,16 +5,16 @@
           <ion-icon name="chevron-back-outline"></ion-icon>          
       </ion-button>
     </ion-buttons>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <h1 src="https://pbs.twimg.com/profile_images/468820564308537345/isvrwi7w.jpeg" ></h1>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
+  <form [formGroup]="loginForm" (submit)="onSubmit()"> 
     <ion-item>
       <ion-icon slot="start" name="email" color='primary'></ion-icon>
-      <ion-input formControlName="email" placeholder="digite seu login" inputmode="mail"></ion-input>
+      <ion-input formControlName="email" placeholder="Digite seu login" inputmode="mail"></ion-input>
 
       <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')" >Obrigatório</ion-note>
       <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">Email invalido</ion-note>
@@ -22,7 +22,7 @@
 
     <ion-item>
       <ion-icon slot="start" name="lock-open-outline" color='primary'></ion-icon>
-      <ion-input formControlName="senha" placeholder="digite a Senha"></ion-input>
+      <ion-input formControlName="senha" placeholder="Digite a Senha"></ion-input>
 
       <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')" >Obrigatório</ion-note>
       <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')">Senha Invalida</ion-note>

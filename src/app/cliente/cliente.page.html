@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cliente</ion-title>
+    <ion-buttons slot="start"> 
+      <ion-button routerLink="/painel" > 
+          <ion-icon name="chevron-back-outline"></ion-icon>          
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-list-header>Listar Cliente</ion-list-header>
+
+      <ion-item-sliding *ngFor="let cliente of clienteList">
+
+        <ion-item-options side="start">
+          <ion-item-option color="danger">
+            <ion-icon name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item>
+          <ion-label>
+            Nome:<h1>{{cliente.nome}}</h1>
+            CPF: <h1>{{cliente.cpf}}</h1>
+            Telefone<h1>{{cliente.telefone}}</h1>
+          </ion-label>
+        </ion-item>
+
+        
+        <ion-item-options side="end">
+          <ion-item-option color="tertiary" expandable>
+            <ion-icon name="open-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="person-add" routerLink="form"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
