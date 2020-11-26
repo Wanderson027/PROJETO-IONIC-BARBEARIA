@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cliente</ion-title>
+    <ion-buttons slot="start"> 
+      <ion-button routerLink="/painel" > 
+          <ion-icon name="chevron-back-outline"></ion-icon>          
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loginForm" (submit)="onSubmit()"> 
+    <ion-item>
+      <ion-icon slot="start" name="email" color='primary'></ion-icon>
+      <ion-input formControlName="email" placeholder="Digite seu login" inputmode="mail"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-icon slot="start" name="lock-open-outline" color='primary'></ion-icon>
+      <ion-input formControlName="senha" placeholder="Digite a Senha"></ion-input>
+    </ion-item> 
+    <ion-button color='primary' expand='block' color="light" type="submit">
+      Login
+    </ion-button>
+  
+</form>
+</ion-content>
