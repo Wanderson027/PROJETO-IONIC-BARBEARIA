@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
 
   onSubmit(): void{
     if(this.loginForm && this.senha){
-      console.log("Os dados do form são: ", this.loginForm)
+      console.log("Os dados do form são: ", this.loginForm.getRawValue())
       this.rota.navigateByUrl('/painel');
     }else{
       console.warn("Não autorizado")
