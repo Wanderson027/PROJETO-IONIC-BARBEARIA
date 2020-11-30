@@ -19,19 +19,16 @@ export class FormClientePage implements OnInit {
 
   ngOnInit() {
     this.setForm()
-    console.log("form =>",this.loginForm);
   }
 
   private setForm() {
     this.loginForm = this.fb.group({
-      email:["", [Validators.required, Validators.email]],
-      senha:["", [Validators.required, Validators.minLength(6)]]
+      email:[null],
+      senha:[null]
     })
   }
   onSubmit(): void{
     console.log("form =>",this.loginForm.getRawValue());
-    const form = this.loginForm;
-    console.log(form)
   }
 
   get nome(): FormControl{
