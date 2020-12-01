@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'criarconta',
     loadChildren: () => import('./criarconta/criarconta.module').then( m => m.CriarcontaPageModule)
   },
+  {
+    path: 'agendamentos',
+    loadChildren: () => import('./agendamentos/agendamentos.module').then( m => m.AgendamentosPageModule)
+  },
 ];
 
 @NgModule({
