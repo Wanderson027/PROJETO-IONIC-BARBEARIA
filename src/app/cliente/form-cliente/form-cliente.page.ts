@@ -23,9 +23,9 @@ export class FormClientePage implements OnInit {
 
   private setForm() {
     this.loginForm = this.fb.group({
-      nome:[null],
-      cpf:[null],
-      telefone:[null]
+      nome:[],
+      cpf:[],
+      telefone:[]
 
     })
   }
