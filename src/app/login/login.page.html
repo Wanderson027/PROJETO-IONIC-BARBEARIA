@@ -13,26 +13,27 @@
   <h1 src="https://pbs.twimg.com/profile_images/468820564308537345/isvrwi7w.jpeg" ></h1>
   <form [formGroup]="loginForm" (submit)="onSubmit()"> 
     <ion-item>
-      <ion-icon slot="start" name="email" color='primary'></ion-icon>
-      <ion-input formControlName="email" placeholder="Digite seu login" inputmode="mail"></ion-input>
+      <ion-icon slot="start" name="mail-outline" color='light'></ion-icon>
+     
+      <ion-input color='light' formControlName="email" placeholder="Digite seu login" inputmode="mail"></ion-input>
 
       <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')" >Obrigatório</ion-note>
       <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">Email invalido</ion-note>
     </ion-item>  
 
     <ion-item>
-      <ion-icon slot="start" name="lock-open-outline" color='primary'></ion-icon>
-      <ion-input formControlName="senha" placeholder="Digite a Senha"></ion-input>
+      <ion-icon slot="start" name="lock-open-outline" color='light'></ion-icon>
+      <ion-input color='light' formControlName="senha" placeholder="Digite a Senha"></ion-input>
 
       <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')" >Obrigatório</ion-note>
       <ion-note slot="end" color="danger" *ngIf="senha.dirty && email.hasError('required')">Senha Invalida</ion-note>
     </ion-item> 
 
-    <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="loginForm.invalid" >
+    <ion-button color="light" expand='block'  type="submit" fill='solid'[disabled]="loginForm.invalid" >
       Login
     </ion-button>
 
-    <ion-button color='primary' color="dark" expand='block' fill='clear'>Criar Conta</ion-button>
+    <ion-button color="dark"   expand='block' fill='solid'>Criar Conta</ion-button>
   
 </form>
 </ion-content>
