@@ -27,10 +27,6 @@ const routes: Routes = [
     loadChildren: () => import('./alunos/alunos.module').then( m => m.AlunosPageModule)
   },
   {
-    path: 'professores',
-    loadChildren: () => import('./professores/professores.module').then( m => m.ProfessoresPageModule)
-  },
-  {
     path: 'turmas',
     loadChildren: () => import('./turmas/turmas.module').then( m => m.TurmasPageModule)
   },
@@ -41,6 +37,10 @@ const routes: Routes = [
   {
     path: 'criarconta',
     loadChildren: () => import('./criarconta/criarconta.module').then( m => m.CriarcontaPageModule)
+  },
+  {
+    path: 'agendamentos',
+    loadChildren: () => import('./agendamentos/agendamentos.module').then( m => m.AgendamentosPageModule)
   },
 ];
 
