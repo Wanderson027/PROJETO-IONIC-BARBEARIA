@@ -23,8 +23,10 @@ export class FormClientePage implements OnInit {
 
   private setForm() {
     this.loginForm = this.fb.group({
-      email:[null],
-      senha:[null]
+      nome:[null],
+      cpf:[null],
+      telefone:[null]
+
     })
   }
   onSubmit(): void{

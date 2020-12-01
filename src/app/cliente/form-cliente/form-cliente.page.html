@@ -11,14 +11,22 @@
 
 <ion-content padding>
   <form [formGroup]="loginForm" (submit)="onSubmit()"> 
+
     <ion-item>
-      <ion-icon slot="start" name="email" color='primary'></ion-icon>
-      <ion-input formControlName="email" placeholder="Digite seu login" inputmode="mail"></ion-input>
+      <ion-icon slot="start" name="happy-outline"  color='primary'></ion-icon>
+      <ion-input formControlName="nome" placeholder="Digite seu Nome" inputmode="mail"></ion-input>
     </ion-item>  
+
     <ion-item>
-      <ion-icon slot="start" name="lock-open-outline" color='primary'></ion-icon>
-      <ion-input formControlName="senha" placeholder="Digite a Senha"></ion-input>
+      <ion-icon slot="start" name="body-outline" color='primary'></ion-icon>
+      <ion-input formControlName="cpf" placeholder="Digite o CPF"></ion-input>
     </ion-item> 
+
+    <ion-item>
+      <ion-icon slot="start" name="call-outline" color='primary'></ion-icon>
+      <ion-input formControlName="telefone" placeholder="Digite O telefone"></ion-input>
+    </ion-item> 
+
     <ion-button color='primary' expand='block' color="light" type="submit">
       Login
     </ion-button>
