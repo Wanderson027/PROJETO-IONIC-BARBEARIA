@@ -37,7 +37,11 @@ const routes: Routes = [
   {
     path: 'criarconta',
     loadChildren: () => import('./criarconta/criarconta.module').then( m => m.CriarcontaPageModule)
+  },  {
+    path: 'cliente-form',
+    loadChildren: () => import('./cliente-form/cliente-form.module').then( m => m.ClienteFormPageModule)
   },
+
 ];
 
 @NgModule({

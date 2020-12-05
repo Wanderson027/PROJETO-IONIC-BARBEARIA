@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ClienteFormPage } from '../cliente-form/cliente-form.page';
 import { ClientePage } from './cliente.page';
-import { FormClientePage } from './form-cliente/form-cliente.page';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'form',
-    component: FormClientePage
+    component: ClienteFormPage
   }
 ];
 
