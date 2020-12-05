@@ -13,20 +13,23 @@
   <form [formGroup]="form" (submit)="onSubmit()">
     <ion-item>
       <ion-icon slot="start" name="happy-outline" color='primary'></ion-icon>
-      <ion-input formControlName="nome" placeholder="Digite seu Nome" inputmode="mail"></ion-input>
+      <ion-input formControlName="nome" type="text" placeholder="Digite seu Nome"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon slot="start" name="body-outline" color='primary'></ion-icon>
-      <ion-input formControlName="cpf" placeholder="Digite o CPF"></ion-input>
+      <ion-input formControlName="cpf" type="number" placeholder="Digite o CPF"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon slot="start" name="call-outline" color='primary'></ion-icon>
-      <ion-input formControlName="telefone" placeholder="Digite O telefone"></ion-input>
+      <ion-input formControlName="telefone"  type="number" placeholder="Digite O telefone"></ion-input>
     </ion-item>
-    <ion-button color='primary' expand='block' color="light" type="submit">
+    <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="form.invalid" *ngIf="renderUpdate == false" >
       Cadastrar
+    </ion-button>
+    <ion-button color='primary' expand='block' color="light" (click)="atualizarObjeto()" [disabled]="form.invalid" *ngIf="renderUpdate == true" >
+      Atualizar
     </ion-button>
   </form>
   <ion-list>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { isNull } from '@angular/compiler/src/output/output_ast';
@@ -18,6 +18,7 @@ export class ClientePage implements OnInit {
   loginForm: FormGroup
   url_api = environment.apiUrl;
   clienteList;
+  renderUpdate : Boolean;
   form : FormGroup
 
   constructor(private http: HttpClient,
@@ -25,6 +26,7 @@ export class ClientePage implements OnInit {
     private rota: Router) { }
 
   ngOnInit() {
+    this.renderUpdate = false;
     this.listarCliente();
     this.setForm();
   }
@@ -41,30 +43,44 @@ export class ClientePage implements OnInit {
     const id = cliente.id;
     console.log("id", id)
     this.http.delete(this.url_api + `/cliente/${id}`).subscribe(res=>{
+      alert("deletado com sucesso")
       this.listarCliente();
     })
   }
 
-  atualizar(cliente){
-    this.http.put(this.url_api +'/cliente', cliente).subscribe(res=>{
-      console.log("atualizado")
+  atualizarObjeto(){
+    this.http.put(this.url_api +'/cliente', this.form.getRawValue()).subscribe(res=>{
+      this.listarCliente();
+      this.ngOnInit();
+      alert("Atualizado com sucesso")
     })
   }
 
   setForm(){
     this.form = this.formBuilder.group({
-      nome: [null],
-      cpf: [null],
-      telefone: [null]
+      id: [null],
+      nome: [null,[Validators.required]],
+      cpf: [null, [Validators.required]],
+      telefone: [null, [Validators.required]]
     })
+  }
+
+  
+  atualizar(cliente){
+    const controls = this.form.controls;
+    controls.id.setValue(cliente.id);
+    controls.nome.setValue(cliente.nome);
+    controls.cpf.setValue(cliente.cpf);
+    controls.telefone.setValue(cliente.telefone);
+    this.renderUpdate = true;
   }
 
   onSubmit() : void{
     console.log(this.form.getRawValue());
     this.http.post(this.url_api +'/cliente', this.form.getRawValue()).subscribe(
       res => {
+        alert("Salvo com sucesso")
         this.ngOnInit();
-        this.rota.navigateByUrl('/cliente');
       }
     )
   }
