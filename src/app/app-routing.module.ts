@@ -48,6 +48,10 @@ const routes: Routes = [
   {
     path: 'produto',
     loadChildren: () => import('./produto/produto.module').then( m => m.ProdutoPageModule)
+  },
+  {
+    path: 'fornecedor',
+    loadChildren: () => import('./fornecedor/fornecedor.module').then( m => m.FornecedorPageModule)
   }
 
 
