@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Funcionario</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/painel">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <ion-item>
+      <ion-icon slot="start" name="happy-outline" color='primary'></ion-icon>
+      <ion-input formControlName="nome" type="text" placeholder="Digite o nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="body-outline" color='primary'></ion-icon>
+      <ion-input formControlName="cargo" type="text" placeholder="Digite o Cargo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="call-outline" color='primary'></ion-icon>
+      <ion-input formControlName="telefone"  type="number" placeholder="Digite O telefone"></ion-input>
+    </ion-item>
+    <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="form.invalid" *ngIf="renderUpdate == false" >
+      Cadastrar
+    </ion-button>
+    <ion-button color='primary' expand='block' color="light" (click)="atualizarObjeto()" [disabled]="form.invalid" *ngIf="renderUpdate == true" >
+      Atualizar
+    </ion-button>
+  </form>
+  <ion-list>
+    <ion-list-header style="text-align: center;">Listar de Registros</ion-list-header>
+    <ion-item-sliding *ngFor="let funcionario of funcionarioList">
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="deletar(funcionario)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item>
+        <ion-label>
+          Nome:<p>{{funcionario.nome}}</p>
+          Cargo: <p>{{funcionario.cargo}}</p>
+          Telefone<p>{{funcionario.telefone}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="tertiary"  (click)="atualizar(funcionario)" expandable>
+          <ion-icon name="open-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

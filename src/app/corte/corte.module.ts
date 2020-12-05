@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AlunosPageRoutingModule } from './alunos-routing.module';
+import { CortePageRoutingModule } from './corte-routing.module';
 
-import { AlunosPage } from './alunos.page';
+import { CortePage } from './corte.page';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -14,10 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FormsModule,
     IonicModule,
-    AlunosPageRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    CortePageRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  declarations: [AlunosPage]
+  declarations: [CortePage]
 })
-export class AlunosPageModule {}
+export class CortePageModule {}

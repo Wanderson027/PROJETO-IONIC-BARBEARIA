@@ -23,10 +23,6 @@ const routes: Routes = [
     loadChildren: () => import('./cliente/cliente.module').then( m => m.ClientePageModule)
   },
   {
-    path: 'alunos',
-    loadChildren: () => import('./alunos/alunos.module').then( m => m.AlunosPageModule)
-  },
-  {
     path: 'turmas',
     loadChildren: () => import('./turmas/turmas.module').then( m => m.TurmasPageModule)
   },
@@ -37,7 +33,24 @@ const routes: Routes = [
   {
     path: 'criarconta',
     loadChildren: () => import('./criarconta/criarconta.module').then( m => m.CriarcontaPageModule)
+  },
+  {
+    path: 'funcionario',
+    loadChildren: () => import('./funcionario/funcionario.module').then( m => m.FuncionarioPageModule)
+  },  {
+    path: 'agendamento',
+    loadChildren: () => import('./agendamento/agendamento.module').then( m => m.AgendamentoPageModule)
+  },
+  {
+    path: 'corte',
+    loadChildren: () => import('./corte/corte.module').then( m => m.CortePageModule)
+  },
+  {
+    path: 'produto',
+    loadChildren: () => import('./produto/produto.module').then( m => m.ProdutoPageModule)
   }
+
+
 
 ];
 
