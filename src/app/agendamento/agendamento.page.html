@@ -15,17 +15,17 @@
 
     <ion-item>
       <ion-icon slot="start" name="happy-outline" color='primary'></ion-icon>
-      <ion-input formControlName="nome" type="text" placeholder="Digite o nome"></ion-input>
+      <ion-input formControlName="nome" type="text" placeholder="Nome do Cliente"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="body-outline" color='primary'></ion-icon>
-      <ion-datetime formControlName="data" displayFormat="DD MM YY" placeholder="Selecione a data"></ion-datetime>
+      <ion-icon slot="start" name="calendar-outline" color='primary'></ion-icon>
+      <ion-datetime formControlName="data" displayFormat="DD MM YY" placeholder="Data Agendamentos"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-icon slot="start" name="call-outline" color='primary'></ion-icon>
-      <ion-input formControlName="telefone"  type="number" placeholder="Digite O telefone"></ion-input>
+      <ion-input formControlName="telefone"  type="number" placeholder="Telefone do Cliente"></ion-input>
     </ion-item>
 
     <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="form.invalid" *ngIf="renderUpdate == false" >

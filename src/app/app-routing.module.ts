@@ -52,6 +52,10 @@ const routes: Routes = [
   {
     path: 'fornecedor',
     loadChildren: () => import('./fornecedor/fornecedor.module').then( m => m.FornecedorPageModule)
+  },
+  {
+    path: 'pedido',
+    loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
   }
 
 

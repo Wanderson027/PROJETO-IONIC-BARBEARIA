@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Funcionario</ion-title>
+    <ion-title>Pedidos</ion-title>
     <ion-buttons slot="start">
       <ion-button routerLink="/painel">
         <ion-icon name="chevron-back-outline"></ion-icon>
@@ -12,44 +12,48 @@
 
 <ion-content>
   <form [formGroup]="form" (submit)="onSubmit()">
+
     <ion-item>
-      <ion-icon slot="start" name="happy-outline" color='primary'></ion-icon>
-      <ion-input formControlName="nome" type="text" placeholder="Nome do Funcionario"></ion-input>
+      <ion-icon slot="start" name="folder-outline" color='primary'></ion-icon>
+      <ion-input formControlName="nome" type="text" placeholder="Nome do Pedido"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="hammer-outline" color='primary'></ion-icon>
-      <ion-input formControlName="cargo" type="text" placeholder="Cargo"></ion-input>
+      <ion-icon slot="start" name="cash-outline" color='primary'></ion-icon>
+      <ion-input formControlName="valor"  type="number" placeholder="Valor do Pedido"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="call-outline" color='primary'></ion-icon>
-      <ion-input formControlName="telefone"  type="number" placeholder="Telefone"></ion-input>
+      <ion-icon slot="start" name="trending-up-outline" color='primary'></ion-icon>
+      <ion-input  formControlName="quantidade"  type="number" placeholder="Quantidade"></ion-input>
     </ion-item>
+
     <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="form.invalid" *ngIf="renderUpdate == false" >
       Cadastrar
     </ion-button>
+
     <ion-button color='primary' expand='block' color="light" (click)="atualizarObjeto()" [disabled]="form.invalid" *ngIf="renderUpdate == true" >
       Atualizar
     </ion-button>
+
   </form>
   <ion-list>
     <ion-list-header style="text-align: center;">Listar de Registros</ion-list-header>
-    <ion-item-sliding *ngFor="let funcionario of funcionarioList">
+    <ion-item-sliding *ngFor="let pedido of pedidoList">
       <ion-item-options side="start">
-        <ion-item-option color="danger" (click)="deletar(funcionario)">
+        <ion-item-option color="danger" (click)="deletar(pedido)">
           <ion-icon name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
       <ion-item>
         <ion-label>
-          Nome:<p>{{funcionario.nome}}</p>
-          Cargo: <p>{{funcionario.cargo}}</p>
-          Telefone<p>{{funcionario.telefone}}</p>
+          Nome:<p>{{pedido.nome}}</p>
+          Valor: <p>{{pedido.valor}}</p>
+          Quantidade:<p>{{pedido.quantidade}}</p>
         </ion-label>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option color="tertiary"  (click)="atualizar(funcionario)" expandable>
+        <ion-item-option color="tertiary"  (click)="atualizar(pedido)" expandable>
           <ion-icon name="open-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>

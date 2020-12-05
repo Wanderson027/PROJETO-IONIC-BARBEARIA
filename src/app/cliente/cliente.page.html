@@ -13,17 +13,17 @@
   <form [formGroup]="form" (submit)="onSubmit()">
     <ion-item>
       <ion-icon slot="start" name="happy-outline" color='primary'></ion-icon>
-      <ion-input formControlName="nome" type="text" placeholder="Digite seu Nome"></ion-input>
+      <ion-input formControlName="nome" type="text" placeholder="Nome do Cliente"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="body-outline" color='primary'></ion-icon>
-      <ion-input formControlName="cpf" type="number" placeholder="Digite o CPF"></ion-input>
+      <ion-icon slot="start" name="card-outline" color='primary'></ion-icon>
+      <ion-input formControlName="cpf" type="number" placeholder="CPF do Cliente"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon slot="start" name="call-outline" color='primary'></ion-icon>
-      <ion-input formControlName="telefone"  type="number" placeholder="Digite O telefone"></ion-input>
+      <ion-input formControlName="telefone"  type="number" placeholder="Telefone do Cliente"></ion-input>
     </ion-item>
     <ion-button color='primary' expand='block' color="light" type="submit" [disabled]="form.invalid" *ngIf="renderUpdate == false" >
       Cadastrar
